@@ -14,7 +14,7 @@ export const Home = () => {
 			setContacts(datos);
 			console.log(datos);
 
-		}
+		} 
 		fetchData()
 
 
