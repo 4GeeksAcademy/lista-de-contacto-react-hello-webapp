@@ -9,4 +9,21 @@ async function getContacts() {
   return data.contacts;
 }
 
-export { getContacts };
+async function createContact(contactData) {
+  const response = await fetch(getBaseUrl(), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(contactData)
+  });
+
+  if (!response.ok) {
+    throw new Error("Error creating contact");
+  }
+
+  return await response.json();
+  
+}
+
+export { getContacts, createContact    };

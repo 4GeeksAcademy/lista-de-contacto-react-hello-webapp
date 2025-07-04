@@ -14,23 +14,23 @@ export const Home = () => {
 			setContacts(datos);
 			console.log(datos);
 
-		} 
+		}
 		fetchData()
 
 
 	}, [])	//Si el arraray estta  vacio, la funciono ejectura una vez
 	//Si hay una variable dentro del array, el bloque de codigo se ejectura cada vez que la variable cambie. 
 	return (
-		<div className="text-center mt-5">
-
+		<div className="text-center m-5">
+			<NavLink to="/add-contact" className="btn btn-success">
+				Add New Contact
+			</NavLink>
 
 			{contacts.length !== 0 ?
 				contacts.map((item) => {
 					return <CardContact contact={item} />
 				}) : <p>No hay contactos</p>}
-			<NavLink to="/add-contact" className="btn btn-success">
-				Add New Contact
-			</NavLink>
+
 
 
 		</div>
