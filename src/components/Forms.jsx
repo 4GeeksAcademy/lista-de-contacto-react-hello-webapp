@@ -13,9 +13,8 @@ function Form() {
     e.preventDefault();
 
     const newContact = {
-      full_name: fullName,
+      name: fullName,
       email: email,
-      agenda_slug: "andersontbernal",
       address: address,
       phone: phone
     };

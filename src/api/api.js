@@ -1,5 +1,5 @@
 function getBaseUrl(agenda = "andersontbernal") {
-  return `https://playground.4geeks.com/contact/agendas/${agenda}`;
+  return `https://playground.4geeks.com/contact/agendas/andersontbernal/contacts`;
 }
 
 async function getContacts() {
@@ -10,14 +10,15 @@ async function getContacts() {
 }
 
 async function createContact(contactData) {
-  const response = await fetch(getBaseUrl(), {
+  const response = await fetch("https://playground.4geeks.com/contact/agendas/andersontbernal/contacts"
+, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(contactData)
   });
-
+  
   if (!response.ok) {
     throw new Error("Error creating contact");
   }
