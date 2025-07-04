@@ -9,17 +9,16 @@ function Form() {
   const [phone, setPhone] = useState("")
   const [address, setAddress] = useState("")
 
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newContact = {
       full_name: fullName,
-      email,
-      phone,
-      address,
-      agenda_slug: "andersontbernal"
+      email: email,
+      agenda_slug: "andersontbernal",
+      address: address,
+      phone: phone
     };
-
     try {
       await createContact(newContact);
       alert("Contacto creado exitosamente");
@@ -36,25 +35,25 @@ const handleSubmit = async (e) => {
 
 
   return (
-      
-      <form style={{ margin: "15px", border: "none", boxShadow: "none", background: "transparent" }} onSubmit={handleSubmit}>
+
+    <form style={{ margin: "15px", border: "none", boxShadow: "none", background: "transparent" }} onSubmit={handleSubmit}>
 
       <h1 className="text-center">Add a new contact</h1>
       <div className="mb-3">
         <label htmlFor="exampleInputFullName" className="form-label fw-bold">FullName</label>
-        <input type="text" placeholder= "Full Name" className="form-control" id="exampleInputFullName" onChange={(e) => setFullName(e.target.value)} />
+        <input type="text" placeholder="Full Name" className="form-control" id="exampleInputFullName" onChange={(e) => setFullName(e.target.value)} />
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
-        <input type="email" placeholder="Email address" className="form-control" id="exampleInputEmail1"  onChange={(e) => setEmail(e.target.value)} />
+        <input type="email" placeholder="Email address" className="form-control" id="exampleInputEmail1" onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputPhone" className="form-label fw-bold">Phone</label>
-        <input type="tel" placeholder="Email address" className="form-control" id="exampleInputPhone"  onChange={(e) => setPhone(e.target.value)} />
+        <input type="tel" placeholder="Email address" className="form-control" id="exampleInputPhone" onChange={(e) => setPhone(e.target.value)} />
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputAdress" className="form-label fw-bold">Address</label>
-        <input type="text" placeholder="Address" className="form-control" id="exampleInputAdress"  onChange={(e) => setAddress(e.target.value)} />
+        <input type="text" placeholder="Address" className="form-control" id="exampleInputAdress" onChange={(e) => setAddress(e.target.value)} />
       </div>
       <button type="submit" className="btn btn-primary">Save</button>
     </form>
